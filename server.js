@@ -1,4 +1,3 @@
-// Filename: server.js
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -12,12 +11,12 @@ const modulePath = path.dirname(fileURLToPath(import.meta.url));
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files using relative path from project root
-app.use(express.static(new URL("./public", import.meta.url).pathname));
+// Serve static files using absolute path
+app.use(express.static(path.join(modulePath, "public")));
 
-// Set view engine and views directory using import.meta.url
+// Set view engine and views directory correctly
 app.set("view engine", "ejs");
-app.set("views", new URL("./views", import.meta.url).pathname);
+app.set("views", path.join(modulePath, "views"));
 
 // Custom logging middleware
 const loggingMiddleware = (req, res, next) => {
@@ -30,6 +29,7 @@ app.use(loggingMiddleware);
 // Routes middleware
 app.use("/", taskRoutes);
 
+// 404 Error Handling
 app.use((req, res) => {
   res.status(404).render("error", { message: "404 Not Found" });
 });
