@@ -1,18 +1,28 @@
 {
-  "name": "simple-task-management-sytem",
+  "name": "simple-task-management-system-",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple task management web application built with **Node.js**, **Express**, **EJS**, and **CSS**. This app allows users to manage tasks, mark them as completed, move them to a trash system, and restore or permanently delete them.",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "jevon teul",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JevonTeul/-Building-a-Simple-Task-Management-Web-App-.git"
+  },
+  "author": "Jevon Teul",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JevonTeul/-Building-a-Simple-Task-Management-Web-App-/issues"
+  },
+  "homepage": "https://github.com/JevonTeul/-Building-a-Simple-Task-Management-Web-App-#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9",
+    "pg": "^8.14.1"
   }
 }
